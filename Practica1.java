@@ -19,7 +19,7 @@ public class Practica1 {
                 int val_A = lista_base.get(i);
                 for (int j = i + 1; j < lista_base.size(); j++) {
                     int val_B = lista_base.get(j);
-                    if ((val_A % val_B) == 0) {
+                    if (val_A % val_B == 0) {
                         setMultiplos.add(val_A);
                         break;
                     }
