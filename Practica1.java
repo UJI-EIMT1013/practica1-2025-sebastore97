@@ -89,6 +89,45 @@ public class Practica1 {
         noCuadrados.removeAll(setCuadrados);
     }
 
+    /*
+    //Otra version del EJERCICIO 2
+
+    public static void separate(Set<Integer> cuadrados, Set<Integer> noCuadrados) {
+        // 1) Unión de los dos conjuntos de entrada (valores únicos)
+        Set<Integer> union = new HashSet<>(cuadrados);
+        union.addAll(noCuadrados);
+
+        // 2) Resultado: elementos que sí son cuadrados
+        Set<Integer> resultCuad = new HashSet<>();
+
+        // 3) Para cada x en la unión, buscamos si existe y en la unión tal que y*y == x
+        for (Integer x : union) {
+            for (Integer y : union) {
+                // Usamos long para evitar overflow en multiplicaciones grandes
+                long yy = (long) y * (long) y;
+                if (yy == (long) x) {
+                    // Si y != x -> es cuadrado claramente.
+                    // Si y == x -> solo lo tomamos como "otro número" si aparece en ambos conjuntos originales
+                    if (!y.equals(x) || (cuadrados.contains(x) && noCuadrados.contains(x))) {
+                        resultCuad.add(x);
+                        break; // ya sabemos que x es cuadrado, no hace falta seguir buscando
+                    }
+                }
+            }
+        }
+
+        // 4) Construimos el conjunto de no-cuadrados como la unión menos los cuadrados
+        Set<Integer> resultNo = new HashSet<>(union);
+        resultNo.removeAll(resultCuad);
+
+        // 5) Modificamos los conjuntos pasados como parámetros (in-place)
+        cuadrados.clear();
+        cuadrados.addAll(resultCuad);
+        noCuadrados.clear();
+        noCuadrados.addAll(resultNo);
+    }
+     */
+
     //EJERCICIO 3
     public static <T> Collection<Set<T>> divideInSets(Iterator<T> it) {
         // Lista de conjuntos donde se almacenarán los resultados
