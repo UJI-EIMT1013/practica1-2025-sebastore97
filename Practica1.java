@@ -152,5 +152,4 @@ public class Practica1 {
         // Si no se encontró pareja, retorna colección vacía
         return resp;
     }
-
 }
